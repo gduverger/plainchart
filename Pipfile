@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+plainchart = {editable = true, path = "."}
+
+[dev-packages]
+setuptools = "==40.0.0"
+wheel = "==0.31.1"
+twine = "==1.11.0"
+
+[requires]
+python_version = "3.7"
