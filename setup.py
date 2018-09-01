@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
 	name='plainchart',
-	version='0.2.0',
+	version='0.2.1',
 	author='Georges Duverger',
 	author_email='georges.duverger@gmail.com',
 	description='A simple plain-text, no-dependencies, pip-installable, open-source charting utility in Python.',
