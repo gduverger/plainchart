@@ -1,5 +1,3 @@
-import statistics
-
 
 class PlainChart(object):
 

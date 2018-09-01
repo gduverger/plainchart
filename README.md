@@ -8,6 +8,7 @@ Usage:
 >>> import plainchart
 >>> chart = plainchart.PlainChart([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 9]) # 🥧
 >>> print(chart.render())
+
      ▌     ▌
      ▌     ▌
      ▌     ▌
@@ -40,9 +41,48 @@ With PlainChart, you can:
 Examples
 --------
 
-![Rando chart](https://github.com/gduverger/plainchart/blob/master/static/rando.png "Rando chart")
+```python
+>>> import plainchart
+>>> import random
+>>>
+>>> values = [random.randint(0, 10) for _ in range(100)]
+>>> chart = plainchart.PlainChart(values)
+>>>
+>>> print(chart.render())
 
-![Sinus chart](https://github.com/gduverger/plainchart/blob/master/static/sinus.png "Sinus chart")
+        ▌   ▌       ▌   ▌                         ▌                      ▌        ▌        ▌
+  ▌     ▌   ▌   ▌▌  ▌   ▌  ▌                      ▌                   ▌  ▌        ▌        ▌
+  ▌     ▌   ▌▌  ▌▌  ▌   ▌  ▌▌                     ▌   ▌    ▌▌  ▌   ▌  ▌  ▌     ▌  ▌    ▌   ▌       ▌
+  ▌ ▌  ▌▌   ▌▌  ▌▌▌ ▌  ▌▌ ▌▌▌                 ▌   ▌   ▌    ▌▌  ▌  ▌▌  ▌  ▌   ▌ ▌  ▌  ▌ ▌   ▌       ▌
+  ▌ ▌  ▌▌▌  ▌▌  ▌▌▌ ▌▌ ▌▌ ▌▌▌▌   ▌         ▌  ▌   ▌   ▌    ▌▌  ▌  ▌▌  ▌  ▌   ▌ ▌ ▌▌▌ ▌ ▌   ▌       ▌
+  ▌ ▌  ▌▌▌  ▌▌  ▌▌▌ ▌▌ ▌▌ ▌▌▌▌   ▌▌        ▌  ▌   ▌ ▌ ▌    ▌▌  ▌  ▌▌  ▌ ▌▌   ▌ ▌▌▌▌▌▌▌ ▌▌▌ ▌       ▌
+  ▌ ▌  ▌▌▌  ▌▌  ▌▌▌ ▌▌ ▌▌▌▌▌▌▌▌▌ ▌▌▌    ▌  ▌  ▌ ▌ ▌ ▌ ▌ ▌  ▌▌  ▌  ▌▌  ▌ ▌▌   ▌ ▌▌▌▌▌▌▌ ▌▌▌ ▌▌     ▌▌
+  ▌ ▌ ▌▌▌▌ ▌▌▌ ▌▌▌▌ ▌▌▌▌▌▌▌▌▌▌▌▌ ▌▌▌  ▌ ▌  ▌  ▌ ▌▌▌ ▌ ▌ ▌▌ ▌▌▌ ▌  ▌▌▌ ▌ ▌▌   ▌▌▌▌▌▌▌▌▌ ▌▌▌ ▌▌   ▌ ▌▌
+ ▌▌▌▌ ▌▌▌▌ ▌▌▌ ▌▌▌▌ ▌▌▌▌▌▌▌▌▌▌▌▌ ▌▌▌ ▌▌ ▌  ▌  ▌▌▌▌▌▌▌ ▌▌▌▌▌▌▌▌ ▌▌ ▌▌▌▌▌ ▌▌▌▌ ▌▌▌▌▌▌▌▌▌ ▌▌▌ ▌▌▌  ▌▌▌▌
+▌▌▌▌▌ ▌▌▌▌ ▌▌▌▌▌▌▌▌ ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌ ▌▌ ▌ ▌▌  ▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌▌ ▌▌▌▌▌▌▌▌▌▌▌▌▌▌ ▌▌▌▌▌▌▌▌▌▌▌▌▌
+```
+
+```python
+>>> import plainchart
+>>> import math
+>>> import numpy as np
+>>>
+>>> values = [1.3 + math.sin(x) for x in np.linspace(0, 4 * math.pi, num=100)]
+>>> chart = plainchart.PlainChart(values, style=plainchart.PlainChart.scatter)
+>>>
+>>> print(chart.render())
+
+         ××××××××                                          ×××××××
+      ×××        ×××                                    ×××       ×××
+    ××              ××                               ×××             ××
+  ××                  ××                            ×                  ××
+××                      ××                        ××                     ××                        ×
+                          ×                     ××                         ××                    ××
+                           ××                 ××                             ××                ××
+                             ×××            ××                                 ××            ××
+                                ×××     ××××                                     ××××    ××××
+                                   ×××××                                             ××××
+```
 
 You can also implement your own style of chart. Below is an example of a HTML chart (`mean_html.py`) with different colors for values below and above the mean.
 
@@ -75,6 +115,7 @@ def mean_html(chart, value, y):
 
 values = [random.randint(0, 10) for _ in range(100)]
 chart = plainchart.PlainChart(values, style=mean_html)
+
 print(chart.render(new_line='<br>'))
 ```
 
@@ -82,7 +123,7 @@ print(chart.render(new_line='<br>'))
 $ python mean_html.py > mean.html
 ```
 
-![Mean chart](https://github.com/gduverger/plainchart/blob/master/static/mean.png "Mean chart")
+![Mean HTML chart](https://github.com/gduverger/plainchart/blob/master/static/mean.png "Mean HTML chart")
 
 Contribute
 ----------
