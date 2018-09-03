@@ -1,7 +1,7 @@
 PlainChart
 ==========
 
-A simple plain-text, no-dependencies, `pip`-installable, open-source charting utility in Python.
+A simple text-based, no-dependencies, `pip`-installable, open-source charting utility in Python.
 
 Usage:
 ```python
@@ -33,7 +33,7 @@ Features
 --------
 
 With PlainChart, you can:
-- render an array of values in a plain text chart
+- render an array of values in a text-based chart
 - limit the height of the chart and have the values rendered accordingly
 - render a different style of chart, e.g., `plainchart.PlainChart.bar` or `plainchart.PlainChart.scatter`
 - implement your own style of chart, e.g., `mean_html` (see example below)
