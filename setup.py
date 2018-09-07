@@ -8,7 +8,7 @@ setuptools.setup(
 	version='0.2.1',
 	author='Georges Duverger',
 	author_email='georges.duverger@gmail.com',
-	description='A simple text-based, no-dependencies, pip-installable, open-source charting utility in Python.',
+	description='A text-based, no-dependencies, pip-installable, open-source charting utility in Python.',
 	long_description=readme,
 	long_description_content_type='text/markdown',
 	url='https://github.com/gduverger/plainchart',

@@ -1,7 +1,7 @@
 PlainChart
 ==========
 
-A simple text-based, no-dependencies, `pip`-installable, open-source charting utility in Python.
+A text-based, no-dependencies, `pip`-installable, open-source charting utility in Python.
 
 Usage:
 ```python
