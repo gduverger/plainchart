@@ -10,6 +10,7 @@ plainchart = {editable = true, path = "."}
 setuptools = "==40.0.0"
 wheel = "==0.31.1"
 twine = "==1.11.0"
+requests = "==2.21.0"
 
 [requires]
 python_version = "3.7"
