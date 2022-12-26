@@ -8,7 +8,7 @@ plainchart = {editable = true, path = "."}
 
 [dev-packages]
 setuptools = "==40.0.0"
-wheel = "==0.31.1"
+wheel = "==0.38.1"
 twine = "==1.11.0"
 requests = "==2.21.0"
 
